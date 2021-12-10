@@ -28,7 +28,7 @@ We used a State Machine for the behaviours of the robot:
 
 The main script is the _fsm.py_ , it contains the State Machine which communicate with the _CVDetection.py_ only in two defined state , the **Normal State** and **Find State**; in the **Play** and **Sleep State** the algorithm for the track is in stand-by , this is possible using a publisher/subscriber communication to the topic _/fsm _with a message of type _Bool()_, is true in the **Normal Find State** and false in the **Play** and **Sleep** case.
 
-![](Images/exp3 Diagram.drawio.png))
+![](Images/exp3%20Diagram.drawio.png))
 
 The State Machine send a Goal to the Move Base Action Server with the topic _/move base_ in order to reach the position , can be the Home position or a random one for the Normal behavior. If the robot is in the Find behavior the Explore node is launched and it's work with the _\explore lite_ package which allows the robot to navigate in an unknown environment relying again on the Move Base Action server.
 
@@ -73,5 +73,9 @@ And to send a GoTo + location command :
 $ rosrun exp_assignment3 GoTo.py
 ```
 After launching this file, it will be asked to the user to insert a location that will be the one that the robot will have to reach or find.
+
+Rviz Map : 
+
+![](Images/Immaginemappa2.png)
 
 Geraldo Margjini , geraldomargjini@gmail.com
